@@ -1,0 +1,20 @@
+---
+ip: "192.168.13.37"
+memory: 2048
+cpus: 2
+hostname: wsp-vagrant
+
+serverpilot_cliend_id: id
+serverpilot_api_key: key
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+  - ~/.ssh/id_rsa
+
+folders:
+  - map: /Users/wsp/apps
+    to: /srv/users/serverpilot/apps
+
+aliases:
+  - admin.test
