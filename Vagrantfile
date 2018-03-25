@@ -174,7 +174,7 @@ config.vm.box = "bento/ubuntu-16.04"
   # Serverpilot Install
   config.vm.provision "shell", inline: "curl -sSL cdk.mk/pss > /home/vagrant/app-create.sh"
   config.vm.provision "shell", inline: "curl -sSL cdk.mk/nss > /home/vagrant/wsp-setup.sh"
-  config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash wsp-setup.sh"
   config.vm.provision "shell", inline: "curl -sSL cdk.mk/adm > /home/vagrant/admin-create.sh"
+  config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash wsp-setup.sh"
   config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash admin-create.sh"
 end
