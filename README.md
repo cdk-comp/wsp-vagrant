@@ -85,7 +85,7 @@ TODO
 - [ ] Admin app - for custom app installation/removing
 - [ ] Make app with git repo on install and another features by wizard
 - [ ] SSH access to serverpilot:serverpilot after serverpilot installation
-- [ ] Nice link for the sh scripts
+- [X] Nice link for the sh scripts
 - [ ] Mount sync folders automatically after the first reload
 
 Change Log
