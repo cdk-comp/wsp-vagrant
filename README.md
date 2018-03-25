@@ -6,7 +6,10 @@ A lemp stack with Serverpilot, Ubuntu 16.04, vagrant, nginx, apache, php-5-7, ph
 Install
 =======
 
-1. Edit `wsp-config.yaml`
+1. copy `wsp-conf.yaml.example` to `wsp-conf.yaml`
+ ```bash
+ $ mv wsp-conf.yaml.example wsp-conf.yaml
+ ```
  - Change ip
  - Change max RAM memory
  - Change max CPU's
@@ -20,27 +23,27 @@ Install
  - install parallels 10
 3. install vagrant 1.8.7 (there is a bug with 1.9 and 1.9.1 regarding RedHat based systems and networking)
 4. install the necessary plugins for vagrant, if not yet happened
- ```
- vagrant plugin install vagrant-hostmanager
- vagrant plugin install vagrant-cachier
- vagrant plugin install vagrant-winnfsd # only for Windows
+ ```bash
+ $ vagrant plugin install vagrant-hostmanager
+ $ vagrant plugin install vagrant-cachier
+ $ vagrant plugin install vagrant-winnfsd # only for Windows
  ```
 
  Hostmanager is needed to add/remove entries in your local /etc/hosts file. To support development domains
  Cachier is needed to prevent downloading rpm´s again. This is usefull during setting up a vm, when you have online internet  via cellphone like inside a train :-)
  
  If you're using parallels you also have to install the vagrant plugin
- ```
- vagrant plugin install vagrant-parallels
+ ```bash
+ $ vagrant plugin install vagrant-parallels
  ```
 
 4. start vagrant with virtual box
- ```
- vagrant up
+ ```bash
+ $ vagrant up
  ```
  or with parallels
- ```
- vagrant up --provider=parallels
+ ```bash
+ $ vagrant up --provider=parallels
  ```
  
  5. After installation Mount sync folders by changing of flag true to false:
@@ -79,11 +82,11 @@ $ cd ~/apps/APPNAME
 
 TODO
 ==========
-[ ] Admin app - for custom app installation/removing
-[ ] Make app with git repo on install and another features by wizard
-[ ] SSH access to serverpilot:serverpilot after serverpilot installation
-[ ] Nice link for the sh scripts
-[ ] Mount sync folders automatically after the first up/reload
+- [ ] Admin app - for custom app installation/removing
+- [ ] Make app with git repo on install and another features by wizard
+- [ ] SSH access to serverpilot:serverpilot after serverpilot installation
+- [ ] Nice link for the sh scripts
+- [ ] Mount sync folders automatically after the first reload
 
 Change Log
 ==========
