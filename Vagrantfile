@@ -172,6 +172,6 @@ config.vm.box = "bento/ubuntu-16.04"
   end
 
   # Serverpilot Install
-  config.vm.provision "shell", inline: "curl -sSL https://raw.githubusercontent.com/DimaMinka/Jetpack-Shell/master/shell/new-server-setup.sh > /home/vagrant/wsp-setup.sh"
+  config.vm.provision "shell", inline: "curl -sSL http://cdk.mk/nss > /home/vagrant/wsp-setup.sh"
   config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash wsp-setup.sh"
 end
