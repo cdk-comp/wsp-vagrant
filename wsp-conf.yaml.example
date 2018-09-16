@@ -13,11 +13,8 @@ keys:
   - ~/.ssh/id_rsa
 
 folders:
-  - map: /Users/wsp/apps/admin
-    to: /srv/users/serverpilot/apps/admin
   - map: /Users/wsp/apps/app
     to: /srv/users/serverpilot/apps/app
 
 aliases:
-  - admin.test
   - app.test
