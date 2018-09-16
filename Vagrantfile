@@ -124,11 +124,7 @@ config.vm.box = "bento/ubuntu-16.04"
     settings["folders"].each do |folder|
       # Check the host filepath and not the guest (waiting serverpilot to create this folder before) Need to learn ruby lol!
       if File.exists? File.expand_path(folder["map"])
-        if OS.windows?
-          config.vm.synced_folder folder["map"], folder["to"], type: "nfs", owner: "serverpilot", group: "serverpilot", disabled: true
-        else
-          config.vm.synced_folder folder["map"], folder["to"], owner: "serverpilot", group: "serverpilot", disabled: true
-        end
+        config.vm.synced_folder folder["map"], folder["to"], owner: "serverpilot", group: "serverpilot", disabled: true
       end
     end
   end
@@ -172,9 +168,7 @@ config.vm.box = "bento/ubuntu-16.04"
   end
 
   # Serverpilot Install
-  config.vm.provision "shell", inline: "curl -sSL cdk.mk/pss > /home/vagrant/app-create.sh"
-  config.vm.provision "shell", inline: "curl -sSL cdk.mk/nss > /home/vagrant/wsp-setup.sh"
-  config.vm.provision "shell", inline: "curl -sSL cdk.mk/adm > /home/vagrant/admin-create.sh"
+  config.vm.provision "shell", inline: "curl -sSL gist.githubusercontent.com/DimaMinka/ee6c5b6b763eb9ca1f005f15c8c827fd/raw/cda88e98b3e75a84fdb18843e3ae0c7169cee12b/provision-single-site.sh > /home/vagrant/app-create.sh"
+  config.vm.provision "shell", inline: "curl -sSL gist.githubusercontent.com/DimaMinka/d1e20e001aeb3a07f9ba955296f18e91/raw/e4d4349c97b573b6d4560e66487c49ba0599a1dd/new-server-setup.sh > /home/vagrant/wsp-setup.sh"
   config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash wsp-setup.sh"
-  config.vm.provision "shell", inline: "source /home/vagrant/.bash_profile && bash admin-create.sh"
 end
