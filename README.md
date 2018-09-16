@@ -50,9 +50,9 @@ Install
  
  ```ruby
 # unmounted
-config.vm.synced_folder folder["map"], folder["to"], type: "nfs", owner: "serverpilot", group: "serverpilot", disabled: true
+config.vm.synced_folder folder["map"], folder["to"], owner: "serverpilot", group: "serverpilot", disabled: true
 # mounted
-config.vm.synced_folder folder["map"], folder["to"], type: "nfs", owner: "serverpilot", group: "serverpilot", disabled: false
+config.vm.synced_folder folder["map"], folder["to"], owner: "serverpilot", group: "serverpilot", disabled: false
  ```
 
 Config Option
@@ -82,11 +82,6 @@ $ cd ~/apps/APPNAME
 
 TODO
 ==========
-- [ ] Admin app - for custom app installation/removing
-- [ ] Make app with git repo on install and another features by wizard
-- [ ] SSH access to serverpilot:serverpilot after serverpilot installation
-- [X] Nice link for the sh scripts
-- [ ] Mount sync folders automatically after the first reload
 
 Change Log
 ==========
